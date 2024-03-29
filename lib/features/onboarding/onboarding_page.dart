@@ -1,5 +1,6 @@
 import 'package:finance_app/common/constants/app_colors.dart';
 import 'package:finance_app/common/constants/app_text_style.dart';
+import 'package:finance_app/common/widgets/first_buttom.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -24,14 +25,11 @@ class OnboardingPage extends StatelessWidget {
             'Save More',
             style: AppTextStyles.medium.copyWith(color: AppColors.greenBottom),
           ),
-          OutlinedButton(
-            style: OutlinedButton.styleFrom(
-                backgroundColor: AppColors.greenBottom),
-            onPressed: () {},
-            child: Text(
-              'Get Started',
-              style: AppTextStyles.buttonOnbording
-                  .copyWith(color: AppColors.white),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: FirstButtom(
+              text: 'Get Started',
+              onPressed: () {},
             ),
           ),
           Text(
