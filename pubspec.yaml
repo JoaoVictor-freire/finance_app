@@ -100,3 +100,4 @@ flutter:
         weight: 800
   assets:
     - assets/images/man.png
+    - assets/images/onboarding.png

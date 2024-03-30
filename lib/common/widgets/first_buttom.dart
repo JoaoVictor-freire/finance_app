@@ -6,32 +6,35 @@ class FirstButtom extends StatelessWidget {
   final VoidCallback? onPressed;
   final String text;
 
+  final BorderRadius _borderRadius =
+      const BorderRadius.all(Radius.circular(28.0));
+
   const FirstButtom({super.key, this.onPressed, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      borderRadius: const BorderRadius.all(Radius.circular(28.0)),
-      child: Ink(
-        decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(28.0)),
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: onPressed != null
-                    ? AppColors.greenGradient
-                    : AppColors.greyGradient)),
-        child: InkWell(
-          onTap: onPressed,
-          child: Container(
-              alignment: Alignment.center,
-              height: 64.0,
-              width: 364.0,
-              child: Text(
-                text,
-                style: AppTextStyles.buttonOnbording
-                    .copyWith(color: AppColors.white),
-              )),
+      child: InkWell(
+        borderRadius: _borderRadius,
+        onTap: onPressed,
+        child: Ink(
+          height: 60.0,
+          width: 284.0,
+          decoration: BoxDecoration(
+              borderRadius: _borderRadius,
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: onPressed != null
+                      ? AppColors.greenGradient
+                      : AppColors.greyGradient)),
+          child: Align(
+            child: Text(
+              text,
+              style: AppTextStyles.buttonOnbording
+                  .copyWith(color: AppColors.white),
+            ),
+          ),
         ),
       ),
     );
